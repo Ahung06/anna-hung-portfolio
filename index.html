@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Hung - Aerospace Engineering Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 1;
+        }
+
+        nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            padding: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px 25px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s, background 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #2a5298;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #1e3c72;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 10px;
+        }
+
+        .project {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .project:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .project h3 {
+            color: #2a5298;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .project-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .project-summary {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .project-outcomes {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #2a5298;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .project-outcomes h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .project-outcomes ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .project-outcomes li {
+            padding: 5px 0;
+            color: #555;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .project-outcomes li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #2a5298;
+            font-weight: bold;
+        }
+
+        .about-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .skill-category h4 {
+            color: #2a5298;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        .skill-category p {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            .contact-info {
+                gap: 15px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Anna Hung</h1>
+            <p class="subtitle">Aerospace Engineering | MIT Class of 2027</p>
+            <div class="contact-info">
+                <span>📧 ajh0457@mit.edu</span>
+                <span>🎓 B.S. Aerospace Engineering</span>
+                <span>Graduating Spring 2027</span>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <!-- UEFC -->
+            <div class="project">
+                <h3>Unified Engineering Flight Competition</h3>
+                <p class="project-date">May 2026</p>
+                <p class="project-summary">
+                    Designed and built a competition RC aircraft optimized for complex scoring criteria. The aircraft
+                    was evaluated on speed and payload positioning, requiring balance between aerodynamic performance
+                    and structural design. Our team achieved first place in the speed flight and second overall.
+                </p>
+                <div class="project-outcomes">
+                    <h4>Design Approach & Achievements:</h4>
+                    <ul>
+                        <li>Developed custom optimizer for aspect ratio, wing area, and velocity</li>
+                        <li>Validated design using vortex lattice analysis</li>
+                        <li>Analyzed spiral stability and selected 8° dihedral angle for recovery</li>
+                        <li>Prioritized robust, predictable design over aggressive optimization</li>
+                        <li>First place in speed flight; Second place overall</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- JetJoe -->
+            <div class="project">
+                <h3>JetJoe Gas Turbine Engine Lab</h3>
+                <p class="project-date">April 2026</p>
+                <p class="project-summary">
+                    Modeled and analyzed a small-scale gas turbine jet engine, including assembly and experimental
+                    testing. Applied thermodynamic cycle modeling and mean-line through-flow analysis using component
+                    performance estimates from hardware geometry.
+                </p>
+                <div class="project-outcomes">
+                    <h4>Key Contributions:</h4>
+                    <ul>
+                        <li>Formulated thermodynamic cycle model using Unified Engineering concepts</li>
+                        <li>Conducted mean-line through-flow analysis</li>
+                        <li>Derived gas turbine cycle parameters matching EGT and SFC specifications</li>
+                        <li>Assembled, installed, and tested engine on experimental test stand</li>
+                        <li>Best performing team of the day</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MIT Nuclear -->
+            <div class="project">
+                <h3>MIT Nuclear: Hydrogen Test Facility</h3>
+                <p class="project-date">April 2026</p>
+                <p class="project-summary">
+                    Designed and constructed a hydrogen gas system for testing Nuclear Thermal Propulsion (NTP) fuels
+                    in the MIT Reactor. This project advances next-generation nuclear propulsion technology that offers
+                    significantly higher specific impulse than conventional chemical rockets.
+                </p>
+                <div class="project-outcomes">
+                    <h4>Project Scope:</h4>
+                    <ul>
+                        <li>System design and testing for NTP fuel evaluation</li>
+                        <li>Integration with MIT Reactor within physical constraints</li>
+                        <li>SolidWorks assembly design and documentation</li>
+                        <li>Supporting development of advanced spaceflight propulsion technology</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project Aurora -->
+            <div class="project">
+                <h3>MIT Rocket Team: Project Aurora (Aerodynamics)</h3>
+                <p class="project-date">May 2025</p>
+                <p class="project-summary">
+                    Contributed to the aerodynamics sub-team for a 10-foot single-stage rocket designed to compete
+                    in the Spaceport America Cup. The rocket features in-house designed composite fins, reefing parachutes,
+                    and a SRAD solid rocket motor targeting 30,000-foot altitude (recent achievement: ~14,000 ft).
+                </p>
+                <div class="project-outcomes">
+                    <h4>Aerodynamics Work:</h4>
+                    <ul>
+                        <li>CFD analysis using SolidWorks Flow Simulation at Mach 1 and Mach 2</li>
+                        <li>Camera shell design optimization</li>
+                        <li>Fin can assembly and testing mount design</li>
+                        <li>Fin leading edge aerodynamic optimization</li>
+                        <li>Manufacturing analysis and planning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MIT STAR Lab -->
+            <div class="project">
+                <h3>MIT STAR Lab: AI Cube (BeaverCube)</h3>
+                <p class="project-date">December 2025</p>
+                <p class="project-summary">
+                    Contributed to the design of an artificial intelligence-equipped nanosatellite cube for the MIT
+                    STAR Lab. Redesigned and refined components for improved performance and manufacturability.
+                </p>
+                <div class="project-outcomes">
+                    <h4>Contributions:</h4>
+                    <ul>
+                        <li>Component design and refinement</li>
+                        <li>Assembly model development in SolidWorks</li>
+                        <li>System integration and payload optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>
+                    I'm an Aerospace Engineering student at MIT graduating in Spring 2027. With hands-on experience
+                    in aircraft design, rocket propulsion systems, and thermal-nuclear propulsion, I'm passionate about
+                    advancing space exploration and aerospace technology.
+                </p>
+                <p style="margin-top: 15px;">
+                    I combine rigorous theoretical analysis with practical engineering, using tools like CFD, finite
+                    element analysis, and thermodynamic modeling to solve complex design challenges. I'm currently
+                    seeking full-time positions in aerospace engineering starting after graduation.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <div class="skills">
+                <div class="skill-category">
+                    <h4>Analysis & Simulation</h4>
+                    <p>CFD (SolidWorks Flow Simulation), FEA, Vortex Lattice Method, Thermodynamic Modeling, Mean-line Analysis</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Design Software</h4>
+                    <p>SolidWorks (Modeling, Assembly, Simulation), CAD/CAM Design</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Engineering Disciplines</h4>
+                    <p>Aerodynamics, Propulsion Systems, Thermodynamics, Structural Analysis, Flight Dynamics</p>
+                </div>
+                <div class="skill-category">
+                    <h4>Project Types</h4>
+                    <p>Aircraft Design, Rocket Systems, Gas Turbine Engines, Nanosatellites, System Testing</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Anna Hung. Aerospace Engineering Portfolio.</p>
+        <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.8;">MIT Class of 2027 | Seeking Full-Time Opportunities</p>
+    </footer>
+</body>
+</html>
